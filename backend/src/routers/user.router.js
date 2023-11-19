@@ -5,6 +5,7 @@ import { BAD_REQUEST } from '../constants/httpStatus.js';
 import  handler  from 'express-async-handler';
 import { UserModel } from '../models/user.model.js';
 import bcrypt from 'bcryptjs';
+const PASSWORD_HASH_SALT_ROUNDS = 10;
 const router = Router() ; 
 
 router.post ('/login', handler( async  (req,res) => {
@@ -20,6 +21,29 @@ router.post ('/login', handler( async  (req,res) => {
 
     res.status(BAD_REQUEST).send("User or password is invalid");
 })); 
+
+router.post('/register', handler( async (req,res) => {
+    const {name, email, password, address } = req.body; 
+    const user = await UserModel.findOne({email})
+    if ( user) {
+        res.status(BAD_REQUEST).send("User already exits, login"); 
+        return ; 
+    }
+
+    const hashpass = await bcrypt.hash(password,PASSWORD_HASH_SALT_ROUNDS) ; 
+    const newuser = {
+        name, 
+        email: email,
+        password: hashpass, 
+        address, 
+    }; 
+
+    const result = await UserModel.create(newuser); 
+    res.send(generateTokenResponse(newuser)); 
+    if ( result) {
+        console.log("sign up success "); 
+    }
+}))
 
 const generateTokenResponse = user => {
     const token = jwt.sign(
