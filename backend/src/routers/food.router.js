@@ -9,6 +9,7 @@ router.get('/', handler( async  (req, res) => {
     res.send(foods);
 }));
 
+
 router.get(
     '/tags',
     handler(async (req, res) => {
@@ -62,7 +63,7 @@ router.get('/tag/:tag',
 router.get('/:foodID', 
     handler( async  (req,res) => {
         const { foodID } = req.params; 
-        const food = sample_foods.find( item => item.id == foodID); 
+        const food = await FoodModel.findById(foodID);
         res.send(food); 
     }));
 
