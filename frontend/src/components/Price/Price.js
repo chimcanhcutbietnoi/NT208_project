@@ -9,7 +9,7 @@ export default function Price({ price, locale, currency }) {
 
   return <span>{formatPrice()}</span>;
 }
-
+// locale ? 
 Price.defaultProps = {
   locale: 'en-US',
   currency: 'USD',
