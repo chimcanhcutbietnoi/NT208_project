@@ -11,9 +11,9 @@ function Input(
     //defaults
     switch (error.type) {
       case 'required':
-        return 'This Field Is Required';
+        return 'Sao bạn lại bỏ trống :< , điền đi';
       case 'minLength':
-        return 'Field Is Too Short';
+        return 'Dài thêm xíu nữa đi';
       default:
         return '*';
     }

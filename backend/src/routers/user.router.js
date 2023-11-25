@@ -13,7 +13,6 @@ router.post ('/login', handler( async  (req,res) => {
     const user = await UserModel.findOne({email});  
 
 
-
     if(user && ( await bcrypt.compare(password, user.password))){
         res.send(generateTokenResponse(user)); 
         return; 
@@ -53,7 +52,7 @@ const generateTokenResponse = user => {
             isAdmin: user.isAdmin,
         }, 
         //key , but in now, use random text 
-        'randomtext', 
+        process.env.JWT_SECRET, 
         {
             expiresIn: '1d', 
         },

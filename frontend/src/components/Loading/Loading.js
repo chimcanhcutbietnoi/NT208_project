@@ -9,8 +9,9 @@ export default function Loading() {
   return (
     <div className={classes.container}>
       <div className={classes.items}>
-        <img src="/loading.svg" alt="Loading!" />
-        <h1>Loading...</h1>
+        {/* can't change the src of img */}
+        <img src="/loading.svg" alt="Loading!" /> 
+        <h1>Chờ xíu...</h1>
       </div>
     </div>
   );

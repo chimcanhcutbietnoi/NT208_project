@@ -10,7 +10,7 @@ import {
 } from 'react-leaflet';
 import { toast } from 'react-toastify';
 import * as L from 'leaflet';
-
+// đừng đựng, cái này hư không biết sửa 
 export default function Map({ readonly, location, onChange }) {
   return (
     <div className={classes.container}>
