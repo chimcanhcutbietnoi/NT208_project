@@ -10,6 +10,7 @@ import {
   search,
 } from '../../services/foodService';
 import NotFound from '../../components/NotFound/NotFound';
+import Footer from '../../components/Footer/Footer';
 
 const initialState = { foods: [], tags: [] };
 
@@ -47,6 +48,7 @@ export default function HomePage() {
       <Tags tags={tags} />
       {foods.length === 0 && <NotFound linkText="Reset Search" />}
       <Thumbnails foods={foods} />
+      <Footer></Footer>
     </>
   );
 }
