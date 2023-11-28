@@ -1,0 +1,19 @@
+.footer{
+    background-color: gray;
+}
+
+.container ul
+{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footerContact a {
+    display: block;
+}
+
+.footerIcon{
+    height: 10rem;
+    width: auto;
+}
