@@ -1,32 +1,35 @@
 import React from 'react'
 import classes from "./footer.module.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-solid-svg-icons";
 export default function Footer() {
   return (
     <footer className={classes.footer}>
-        <div className={classes.container}>   
-            <ul>    
-                <li>
-                <img
-                  className={classes.footerIcon}
-                  src="/icons/header_icon.png"
-                  alt="Logo"
-                />
-                </li>
+      <div className={classes.container}> 
+      <ul> 
+        <li className={classes.NamePage}>
+          <b className={classes.Name}> YUMMY</b>
+        </li>
 
-                <li className={classes.footerContact}>    
-                    <span> Liên hệ với chúng tôi </span>
-                    <a href='https://www.facebook.com/tantien.hmtt'> dev1 </a>
-                    <a> dev2</a>
-                    <a> dev3</a>
-                    <a> dev4</a>
-                </li>
+        <li className={classes.Address}>
+          <b className={classes.address}> Địa chỉ</b>
+          <p> Phường Linh Trung, Thủ Đức, Tp Hồ Chí Minh</p>
+        </li>
 
-                <li>
-                    <span> Thông tin về page</span>
-                    <a>Github</a>
-                </li>
-            </ul>
-        </div>
+        <li className={classes.Contacts}>
+          <b className={classes.contact}> Liên hệ với chúng tôi</b>
+          <p> <a href=''>@huynhminhtantien</a></p>
+          <p> <a href=''>@buihoangtrucanh</a></p>
+          <p> <a href=''>@lehoangoanh</a></p>
+          <p> <a href=''>@nguyenngoctramy</a></p>
+        </li>
+        
+          <li className={classes.infor}>
+            <b> Thông tin về page</b>
+            <p> <a href=''>github</a></p>
+          </li>
+          </ul>
+      </div>
     </footer>
   )
 }
