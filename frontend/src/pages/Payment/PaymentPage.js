@@ -19,14 +19,14 @@ export default function PaymentPage() {
     <>
       <div className={classes.container}>
         <div className={classes.content}>
-          <Title title="Order Form" fontSize="1.6rem" />
+          <Title title="Xác nhận đơn hàng" fontSize="1.6rem" />
           <div className={classes.summary}>
             <div>
-              <h3>Name:</h3>
+              <h3>Tên:</h3>
               <span>{order.name}</span>
             </div>
             <div>
-              <h3>Address:</h3>
+              <h3>Địa chỉ:</h3>
               <span>{order.address}</span>
             </div>
           </div>
@@ -34,7 +34,7 @@ export default function PaymentPage() {
         </div>
 
         <div className={classes.map}>
-          <Title title="Your Location" fontSize="1.6rem" />
+          <Title title="Địa chỉ của bạn" fontSize="1.6rem" />
           <Map readonly={true} location={order.addressLatLng} />
         </div>
 

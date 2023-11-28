@@ -9,10 +9,10 @@ export default function CartPage() {
   const { cart, removeFromCart, changeQuantity } = useCart();
   return (
     <>
-      <Title title="Cart Page" margin="1.5rem 0 0 2.5rem" />
+      <Title title="Giỏ hàng" margin="1.5rem 0 0 2.5rem" />
 
       {cart.items.length === 0 ? (
-        <NotFound message="Cart Page Is Empty!" />
+        <NotFound message="Giỏ hàng trống" />
       ) : (
         <div className={classes.container}>
           <ul className={classes.list}>
@@ -52,7 +52,7 @@ export default function CartPage() {
                     className={classes.remove_button}
                     onClick={() => removeFromCart(item.food.id)}
                   >
-                    Remove
+                    Xóa
                   </button>
                 </div>
               </li>
@@ -67,7 +67,7 @@ export default function CartPage() {
               </div>
             </div>
 
-            <Link to="/checkout">Proceed To Checkout</Link>
+            <Link to="/checkout">Xác nhận đơn hàng</Link>
           </div>
         </div>
       )}
