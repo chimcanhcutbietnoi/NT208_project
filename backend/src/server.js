@@ -31,7 +31,9 @@ app.use('/api/users', userRouter);
 app.use('/api/orders', oderRouter);
 
 const publicFolder = path.join(__dirname,'public');
+
 app.use(express.static(publicFolder));
+
 app.get('*', (req, res) => {
     const indexFilePath = path.join(publicFolder, 'index.html');
     res.sendFile(indexFilePath);
