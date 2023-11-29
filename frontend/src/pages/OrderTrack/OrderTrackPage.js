@@ -60,7 +60,7 @@ export default function OrderTrackPage() {
           <Map location={order.addressLatLng} readonly={true} />
         </div> */}
 
-        {order.status === 'NEW' && (
+        {order.status === 'Chưa thanh toán' && (
           <div className={classes.payment}>
             <Link to="/payment">Thanh toán</Link>
           </div>

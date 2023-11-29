@@ -1,7 +1,4 @@
 export const OrderStatus = {
-    NEW: 'NEW',
-    PAYED: 'PAYED',
-    SHIPPED: 'SHIPPED',
-    CANCELED: 'CANCELED',
-    REFUNDED: 'REFUNDED',
+    NEW: "Chưa thanh toán",
+    PAYED: 'Đã thanh toán',
   };
