@@ -34,11 +34,11 @@ export default function RegisterPage() {
   return (
     <div className={classes.container}>
       <div className={classes.details}>
-        <Title title="Register" />
+        <Title title="Đăng kí" />
         <form onSubmit={handleSubmit(submit)} noValidate>
           <Input
             type="text"
-            label="Name"
+            label="Tên người dùng"
             {...register('name', {
               required: true,
               minLength: 5,
@@ -61,7 +61,7 @@ export default function RegisterPage() {
 
           <Input
             type="password"
-            label="Password"
+            label="Mật khẩu"
             {...register('password', {
               required: true,
               minLength: 5,
@@ -71,7 +71,7 @@ export default function RegisterPage() {
 
           <Input
             type="password"
-            label="Confirm Password"
+            label="Nhập lại mật khẩu"
             {...register('confirmPassword', {
               required: true,
               validate: value =>
@@ -84,7 +84,7 @@ export default function RegisterPage() {
 
           <Input
             type="text"
-            label="Address"
+            label="Địa chỉ"
             {...register('address', {
               required: true,
               minLength: 10,
@@ -92,12 +92,12 @@ export default function RegisterPage() {
             error={errors.address}
           />
 
-          <Button type="submit" text="Register" />
+          <Button type="submit" text="Đăng kí" />
 
           <div className={classes.login}>
-            Already a user? &nbsp;
+            Bạn đã có tài khoản?&nbsp;
             <Link to={`/login${returnUrl ? '?returnUrl=' + returnUrl : ''}`}>
-              Login here
+              Đăng nhập ở đây nè 🚩
             </Link>
           </div>
         </form>

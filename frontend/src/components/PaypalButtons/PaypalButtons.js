@@ -53,12 +53,12 @@ function Buttons({ order }) {
       toast.success('Thanh toán thành công rồi nè :>', 'Success');
       navigate('/track/' + orderId);
     } catch (error) {
-      toast.error('Payment Save Failed', 'Error');
+      toast.error('Thanh toán thất bại, không thể lưu thông tin thanh toán. Vui lòng liên hệ với dịch vụ chăm sóc khách hàng', 'Error');
     }
   };
 
   const onError = err => {
-    toast.error('Thanh toán thât bại, thử lại bạn nhé :<', 'Error');
+    toast.error('Thanh toán thất bại, thử lại bạn nhé :<', 'Error');
   };
 
   return (

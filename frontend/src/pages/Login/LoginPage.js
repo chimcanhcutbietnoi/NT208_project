@@ -31,7 +31,7 @@ export default function LoginPage() {
   return (
     <div className={classes.container}>
       <div className={classes.details}>
-        <Title title="Login" />
+        <Title title="Đăng nhập" />
         <form onSubmit={handleSubmit(submit)} noValidate>
           <Input
             type="email"
@@ -40,7 +40,7 @@ export default function LoginPage() {
               required: true,
               pattern: {
                 value: /^[\w-.]+@([\w-]+\.)+[\w-]{2,63}$/i,
-                message: 'Email Is Not Valid',
+                message: 'Email không hợp lệ, vui lòng điền lại!',
               },
             })}
             error={errors.email}
@@ -48,19 +48,19 @@ export default function LoginPage() {
 
           <Input
             type="password"
-            label="Password"
+            label="Mật khẩu"
             {...register('password', {
               required: true,
             })}
             error={errors.password}
           />
 
-          <Button type="submit" text="Login" />
+          <Button type="submit" text="Đăng nhập" />
 
           <div className={classes.register}>
-            New user? &nbsp;
+            Bạn chưa có tài khoản?&nbsp;
             <Link to={`/register${returnUrl ? '?returnUrl=' + returnUrl : ''}`}>
-              Register here
+            Tạo tài khoản ngay nào! 🆕
             </Link>
           </div>
         </form>
