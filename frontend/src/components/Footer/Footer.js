@@ -51,7 +51,7 @@ export default function Footer() {
         
           <li className={classes.infor}>
             <b> Thông tin về page</b>
-            <p> <a href=''>github</a></p>
+            <p> <a href='https://github.com/chimcanhcutbietnoi/NT208_project' target="_blank" rel="noopener noreferrer">github</a></p>
           </li>
           </ul>
       </div>
