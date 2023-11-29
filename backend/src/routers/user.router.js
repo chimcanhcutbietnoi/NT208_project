@@ -48,6 +48,21 @@ router.post('/register', handler( async (req,res) => {
 
 
 router.put(
+    '/updateProfile',
+    auth,
+    handler(async (req, res) => {
+      const { name, address } = req.body;
+      const user = await UserModel.findByIdAndUpdate(
+        req.user.id,
+        { name, address },
+        { new: true }
+      );
+  
+      res.send(generateTokenResponse(user));
+    })
+  );
+
+router.put(
     '/changePassword',
     auth,
     handler(async (req, res) => {
