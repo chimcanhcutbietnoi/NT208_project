@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const user = await userService.login(email, password);
       setUser(user);
-      toast.success('Login Successful');
+      toast.success('Đăng nhập thành công');
     } catch (err) {
       toast.error(err.response.data);
     }
@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const user = await userService.register(data);
       setUser(user);
-      toast.success('Register Successful');
+      toast.success('Đăng kí thành công');
     } catch (err) {
       toast.error(err.response.data);
     }
@@ -30,19 +30,19 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     userService.logout();
     setUser(null);
-    toast.success('Logout Successful');
+    toast.success('Đăng xuất thành công');
   };
 
   const updateProfile = async user => {
     const updatedUser = await userService.updateProfile(user);
-    toast.success('Profile Update Was Successful');
+    toast.success('Thông tin của bạn đã được cập nhật');
     if (updatedUser) setUser(updatedUser);
   };
 
   const changePassword = async passwords => {
     await userService.changePassword(passwords);
     logout();
-    toast.success('Password Changed Successfully, Please Login Again!');
+    toast.success('Mật khẩu đã được thay đổi, vui lòng đăng nhập lại!');
   };
 
   return (

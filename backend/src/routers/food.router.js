@@ -47,7 +47,7 @@ router.get('/search/:searchTerm',
     handler(async (req, res) => {
     const  { searchTerm } = req.params; 
     const  searchRegex = new RegExp(searchTerm, 'i');
-    const  foods = sample_foods.filter( item => 
+    const  foods = FoodModel.filter( item => 
         item.name.toLowerCase().includes(searchTerm.toLowerCase())
         ); 
     res.send(foods)
@@ -56,7 +56,7 @@ router.get('/search/:searchTerm',
 router.get('/tag/:tag', 
     handler(async (req,res) => {
         const { tag } = req.params; 
-        const foods = sample_foods.filter(item => item.tags?.includes(tag)); 
+        const foods = await FoodModel.find({ tags: { $in: [tag] } });
         res.send(foods);
     })); 
 

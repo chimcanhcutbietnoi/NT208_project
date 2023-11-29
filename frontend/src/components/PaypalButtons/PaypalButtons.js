@@ -50,7 +50,7 @@ function Buttons({ order }) {
       const payment = await actions.order.capture();
       const orderId = await pay(payment.id);
       clearCart();
-      toast.success('Payment Saved Successfully', 'Success');
+      toast.success('Thanh toán thành công rồi nè :>', 'Success');
       navigate('/track/' + orderId);
     } catch (error) {
       toast.error('Payment Save Failed', 'Error');
@@ -58,7 +58,7 @@ function Buttons({ order }) {
   };
 
   const onError = err => {
-    toast.error('Payment Failed', 'Error');
+    toast.error('Thanh toán thât bại, thử lại bạn nhé :<', 'Error');
   };
 
   return (

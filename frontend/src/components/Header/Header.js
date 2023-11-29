@@ -27,7 +27,7 @@ export default function Header() {
               <li className={classes.menu_container}>
                 <Link to="/dashboard">{user.name}</Link>
                 <div className={classes.menu}>
-                  <Link to="/profile">Thông tin cá nhân</Link>
+                  <Link to="/profile">Thông tin</Link>
                   <Link to="/orders">Đơn hàng</Link>
                   <a onClick={logout}>Đăng xuất</a>
                 </div>

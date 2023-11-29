@@ -26,7 +26,7 @@ export default function CheckoutPage() {
 
   const submit = async data => {
     if (!order.addressLatLng) {
-      toast.warning('Please select your location on the map');
+      toast.warning('Vui lòng chọn vị trí nhận hàng');
       return;
     }
 
@@ -38,17 +38,17 @@ export default function CheckoutPage() {
     <>
       <form onSubmit={handleSubmit(submit)} className={classes.container}>
         <div className={classes.content}>
-          <Title title="Order Form" fontSize="1.6rem" />
+          <Title title="Đơn hàng" fontSize="1.6rem" />
           <div className={classes.inputs}>
             <Input
               defaultValue={user.name}
-              label="Name"
+              label="Khách hàng"
               {...register('name')}
               error={errors.name}
             />
             <Input
               defaultValue={user.address}
-              label="Address"
+              label="Địa chỉ"
               {...register('address')}
               error={errors.address}
             />
@@ -56,7 +56,7 @@ export default function CheckoutPage() {
           <OrderItemsList order={order} />
         </div>
         <div>
-          <Title title="Choose Your Location" fontSize="1.6rem" />
+          <Title title="Bản đồ" fontSize="1.6rem" />
           <Map
             location={order.addressLatLng}
             onChange={latlng => {
@@ -70,7 +70,7 @@ export default function CheckoutPage() {
           <div className={classes.buttons}>
             <Button
               type="submit"
-              text="Go To Payment"
+              text="Thanh toán"
               width="100%"
               height="3rem"
             />

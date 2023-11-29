@@ -48,11 +48,6 @@ export default function FoodPage() {
               <StarRating stars={food.stars} size={25} />
             </div>
 
-            <div className={classes.origins}>
-              {food.origins?.map(origin => (
-                <span key={origin}>{origin}</span>
-              ))}
-            </div>
 
             <div className={classes.tags}>
               {food.tags && (
@@ -65,7 +60,7 @@ export default function FoodPage() {
 
             <div className={classes.cook_time}>
               <span>
-                Time to cook about <strong>{food.cookTime}</strong> minutes
+                Đơn hàng sẽ có trong <strong>{food.cookTime}</strong> phút
               </span>
             </div>
 
@@ -73,7 +68,7 @@ export default function FoodPage() {
               <Price price={food.price} />
             </div>
 
-            <button onClick={handleAddToCart}>Add To Cart</button>
+            <button onClick={handleAddToCart}>Thêm vào giỏ hàng</button>
           </div>
         </div>
       )}

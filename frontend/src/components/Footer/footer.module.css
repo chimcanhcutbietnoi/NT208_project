@@ -1,0 +1,54 @@
+.footer {
+    background: #e9c3bb;
+    padding: 0;
+    position: relative;
+    font-weight: 500;
+  }
+  
+  .footer  b{
+    color: white;
+  }
+  .footer p {
+    color: #ac5865;
+  }
+  .footer a {
+    color: #ac5865;
+  }
+  .container .Name{
+    font-size: 3rem;
+    text-decoration: underline;
+  }
+  .container .NamePage {
+    margin: 3%;
+  }
+  .container .Address {
+    margin: 3%;
+  }
+  .container .Address b {
+    margin: 3%;
+    text-align: center;
+  }
+  
+  .container .Contacts {
+    margin: 3%;
+  }
+  
+  .container .infor {
+    margin: 3%;
+  }
+  .container p {
+    text-align: center;
+    margin: auto;
+  }
+ 
+  .container ul {
+    display: flex;
+    justify-content: space-between;
+  }
+ 
+  .footer ul {
+    display: flex;
+    list-style-type: none;
+    margin-bottom: 0;
+  }
+  

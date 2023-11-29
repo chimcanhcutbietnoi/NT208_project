@@ -96,12 +96,12 @@
 }
 
 .checkout .foods_count::before {
-  content: 'Count: ';
+  content: 'Số lượng: ';
   color: grey;
 }
 
 .checkout .total_price::before {
-  content: 'Price: ';
+  content: 'Tổng thanh toán: ';
   color: grey;
 }
 

@@ -26,27 +26,27 @@ export default function OrderTrackPage() {
     order && (
       <div className={classes.container}>
         <div className={classes.content}>
-          <h1>Order #{order.id}</h1>
+          <h1>Đơn hàng #{order.id}</h1>
           <div className={classes.header}>
             <div>
-              <strong>Date</strong>
+              <strong>Thời gian đặt hàng</strong>
               <DateTime date={order.createdAt} />
             </div>
             <div>
-              <strong>Name</strong>
+              <strong>Khách hàng</strong>
               {order.name}
             </div>
             <div>
-              <strong>Address</strong>
+              <strong>Địa chỉ</strong>
               {order.address}
             </div>
             <div>
-              <strong>State</strong>
+              <strong>Trạng thái</strong>
               {order.status}
             </div>
             {order.paymentId && (
               <div>
-                <strong>Payment ID</strong>
+                <strong>Mã thanh toán</strong>
                 {order.paymentId}
               </div>
             )}
@@ -55,14 +55,14 @@ export default function OrderTrackPage() {
           <OrderItemsList order={order} />
         </div>
 
-        <div>
+        {/* <div>
           <Title title="Your Location" fontSize="1.6rem" />
           <Map location={order.addressLatLng} readonly={true} />
-        </div>
+        </div> */}
 
         {order.status === 'NEW' && (
           <div className={classes.payment}>
-            <Link to="/payment">Go To Payment</Link>
+            <Link to="/payment">Thanh toán</Link>
           </div>
         )}
       </div>

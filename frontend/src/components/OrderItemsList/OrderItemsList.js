@@ -9,14 +9,15 @@ export default function OrderItemsList({ order }) {
       <tbody>
         <tr>
           <td colSpan="5">
-            <h3>Order Items:</h3>
+            <h3>Sản phẩm:</h3>
           </td>
         </tr>
         {order.items.map(item => (
           <tr key={item.food.id}>
             <td>
               <Link to={`/food/${item.food.id}`}>
-                <img src={item.food.imageUrl} />
+                <img src={item.food.imageUrl}
+                alt={item.food.name} />
               </Link>
             </td>
             <td>{item.food.name}</td>
@@ -33,7 +34,7 @@ export default function OrderItemsList({ order }) {
         <tr>
           <td colSpan="3"></td>
           <td>
-            <strong>Total :</strong>
+            <strong>Tổng thanh toán :</strong>
           </td>
           <td>
             <Price price={order.totalPrice} />
