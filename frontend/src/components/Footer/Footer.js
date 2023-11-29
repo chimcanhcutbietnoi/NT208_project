@@ -1,7 +1,5 @@
 import React from 'react'
 import classes from "./footer.module.css"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-solid-svg-icons";
 import { toast } from 'react-toastify';
 
 export default function Footer() {
